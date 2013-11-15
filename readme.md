@@ -10,6 +10,7 @@ Showcase skills in the following:
 * Vanilla JavaScript
 * jQuery
 * PHP
+
 By using the following:
 * HTML
 * CSS
