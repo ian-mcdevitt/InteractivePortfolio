@@ -5,17 +5,24 @@ This will eventually be an interactive portfolio for Ian McDevitt.
 Goals:
 
 Showcase skills in the following:
-* HTML
-* CSS
-* Vanilla JavaScript
-* jQuery
-* PHP
+* Languages:
+	* HTML
+	* CSS
+	* JavaScript
+	* jQuery
+	* PHP
+	* SQL
+	* Java
+	* C
+	* C++
+	* ColdFusion
+* Skills
+	* Problem solving
+	* Documentation writing
+	* Systems analysis
+* Development Practices
+	* Object-Oriented Design
+	* Functional Programming
+	* Agile
 
-By using the following:
-* HTML
-* CSS
-* Vanilla JavaScript
-* jQuery
-* PHP
-
-Show, don't tell!
+With an emphasis on showing, instead of telling.
