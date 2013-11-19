@@ -1,48 +1,40 @@
 $(function ()
 {
-	$('.novice').mouseenter(function ()
+	skills = {beginner:1, familiar:2, proficient:3, expert:4, master:5};
+	$('.beginner, .familiar, .proficient, .expert, .master').mouseenter(function ()
 	{
-		$(this).animate({width:"140px"}, 500);
+		$(this).animate({width:skills[($(this).context.className)]+"40px"});
 	});
-	$('.novice').mouseleave(function ()
+	
+	$('.beginner, .familiar, .proficient, .expert, .master').mouseleave(function ()
 	{
-		$(this).animate({width:"40px"}, 500);
+		$(this).animate({width:"40px"});
 	});
-	$('.competent').mouseenter(function ()
-	{
-		$(this).animate({width:"240px"}, 500);
-	});
-	$('.competent').mouseleave(function ()
-	{
-		$(this).animate({width:"40px"}, 500);
-	});
-	$('.proficient').mouseenter(function ()
-	{
-		$(this).animate({width:"340px"}, 500);
-	});
-	$('.proficient').mouseleave(function ()
-	{
-		$(this).animate({width:"40px"}, 500);
-	});
-	$('.expert').mouseenter(function ()
-	{
-		$(this).animate({width:"440px"}, 500);
-	});
-	$('.expert').mouseleave(function ()
-	{
-		$(this).animate({width:"40px"}, 500);
-	});
-	$('.master').mouseenter(function ()
-	{
-		$(this).animate({width:"540px"}, 500);
-	});
-	$('.master').mouseleave(function ()
-	{
-		$(this).animate({width:"40px"}, 500);
-	});
+
 	$('.expand_all').click(function ()
 	{
-		$('.novice, .competent, .proficient, .expert, .master').mouseenter();
-		$('.novice, .competent, .proficient, .expert, .master').unbind();
+		$('.beginner, .familiar, .proficient, .expert, .master').mouseenter();
+		$('.beginner, .familiar, .proficient, .expert, .master').unbind();
 	});
 });
+
+function SimpleController($scope)
+{
+	$scope.skills =
+		[
+			{name:'HTML',level:'4'},
+			{name:'CSS',level:'3'},
+			{name:'JavaScript',level:'4'},
+			{name:'jQuery',level:'3'},
+			{name:'PHP',level:'5'},
+			{name:'SQL',level:'3'},
+			{name:'Java',level:'4'},
+			{name:'C',level:'2'},
+			{name:'C++',level:'3'},
+			{name:'ColdFusion',level:'1'},
+			{name:'Ruby',level:'1'},
+			{name:'AngularJS',level:'3'}
+		];
+		
+	$scope.skill_names = ['Beginner', 'Familiar', 'Proficient', 'Expert', 'Master'];
+}

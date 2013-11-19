@@ -1,51 +1,28 @@
-<html>
+<html ng-app>
 	<head>
 		<script type="text/javascript" src="jquery203.js"></script>
+		<script type="text/javascript" src="angular.js"></script>
 		<script type="text/javascript" src="script.js"></script>
 		<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	</head>
-	<body>
-		<?php
-			$languages = array
-			(
-				'HTML' => 'expert',
-				'CSS' => 'proficient',
-				'JavaScript' => 'expert',
-				'jQuery' => 'proficient',
-				'PHP' => 'master',
-				'SQL' => 'proficient',
-				'Java' => 'expert',
-				'C' => 'competent',
-				'C++' => 'proficient',
-				'ColdFusion' => 'novice',
-				'Ruby' => 'novice'
-			);
-		?>
+	<body ng-controller="SimpleController">
 		<a href="#" class="expand_all">Expand All</a>
 		<table>
 			<tr>
 				<th>&nbsp;</th>
 				<th><span style="width:40px; display:block;"></span></th>
-				<th>Novice</th>
-				<th>Competent</th>
-				<th>Proficient</th>
-				<th>Expert</th>
-				<th>Master</th>
+				<th ng-repeat="level in skill_names">{{level}}</td>
 			</tr>
-			<?php
-				print_skills($languages);
-			?>
+			<tr ng-repeat="skill in skills | orderBy:'level':true">
+				<td>{{skill.name}}</td>
+				<td>
+					<div class="meter">
+						<span ng-class="skill_names[skill.level-1] | lowercase">
+						</span>
+					</div>
+				</td>
+				<td ng-repeat="level in skill_names">&nbsp;</td>
+			</tr>
 		</table>
 	</body>
 </html>
-
-<?php
-	function print_skills($skills_array)
-	{
-		foreach($skills_array as $skill => $skill_level)
-		{
-			echo '<tr><td>' . $skill . '</td><td><div class="meter"><span class="' . $skill_level . '"></span></div></td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>' . "\r\n";
-		}
-	}
-
-?>
