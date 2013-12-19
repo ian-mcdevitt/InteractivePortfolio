@@ -16,6 +16,8 @@ Showcase skills in the following:
 	* C
 	* C++
 	* ColdFusion
+	* Angular
+	* Node
 * Skills
 	* Problem solving
 	* Documentation writing
